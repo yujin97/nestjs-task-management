@@ -53,8 +53,9 @@ export class TasksService {
     }
 
     deleteTaskById(id: string): void{
+        const found  = this.getTaskById(id);
         this.tasks.forEach( (task, i) => {
-            if(task.id == id) {
+            if(task.id == found.id) {
                 this.tasks.splice(i,1);
             }
         })
